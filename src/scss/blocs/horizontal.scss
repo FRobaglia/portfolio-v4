@@ -1,0 +1,25 @@
+.horizontal {
+  height: 300vw;
+
+  .horizontal__inner {
+    width: 300vw;
+    height: 100vh;
+    background: yellow;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.horizontal--isFixed {
+  .horizontal__inner {
+    position: fixed;
+  }
+}
+
+.horizontal--isScrolled {
+  .horizontal__inner {
+    bottom: 0;
+    top: auto;
+  }
+}
