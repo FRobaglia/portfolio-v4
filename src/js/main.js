@@ -60,3 +60,20 @@ function setTranslateX(element, progression) {
 }
 
 /* end of horizontal scroll */
+
+
+window.addEventListener("load", function(event) {
+  
+  let paragraphs = document.querySelectorAll('p');
+  document.querySelector('.title').style.transform = 'translateY(0px) scale(1)';
+  setTimeout(() => {
+    document.querySelector('.subtitle').style.transform = 'translateY(0px) scale(1)';
+  }, 500);
+  setTimeout(() => {
+    for (let i = 0; i < paragraphs.length; i++) {
+      const p = paragraphs[i];
+      p.style.opacity= '1';
+      p.style.transform= 'scale(1)';
+    }
+  }, 1500);
+});

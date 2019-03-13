@@ -1,12 +1,18 @@
 @font-face {
-  src: url(../assets/fonts/PT_Sans/PT_Sans-Web-Bold.ttf) format('truetype');
-  font-family: 'PTSansBold';
+  src: url(../assets/fonts/PT_Sans/PT_Sans-Web-Regular.ttf) format('truetype');
+  font-family: 'PTSans';
 }
 @font-face {
-  src: url(../assets/fonts/PT_Sans/PT_Sans-Web-BoldItalic.ttf) format('truetype');
-  font-family: 'PTSansBoldItalic';
+  src: url(../assets/fonts/PT_Sans/PT_Sans-Web-Bold.ttf) format('truetype');
+  font-family: 'PTSans';
+  font-weight: bold;
+}
+@font-face {
+  src: url(../assets/fonts/SourceSansPro/SourceSansPro-Regular.ttf) format('truetype');
+  font-family: 'SourceSansPro';
 }
 @font-face {
   src: url(../assets/fonts/SourceSansPro/SourceSansPro-Light.ttf) format('truetype');
-  font-family: 'SourceSansProLight';
+  font-family: 'SourceSansPro';
+  font-weight: lighter;
 }

@@ -1,5 +1,8 @@
 .horizontal {
-  height: 300vw;
+    min-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    height: 300vw;
 
   .horizontal__inner {
     width: 300vw;
