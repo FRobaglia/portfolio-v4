@@ -1,6 +1,9 @@
 /* start of horizontal scroll */
 
-var horizontals = document.querySelectorAll(".horizontal");
+let timer = null;
+let screenPositions = [];
+
+let horizontals = document.querySelectorAll(".horizontal");
 
 horizontals.forEach(function(horizontal) {
   var inner = horizontal.querySelector(".horizontal__inner");
@@ -39,6 +42,26 @@ horizontals.forEach(function(horizontal) {
 
       // Set the translation for the element
       setTranslateX(inner, progression);
+
+
+      // lock scroll on the closest project
+
+      let wh = window.innerHeight;
+      let horizontalWidth = horizontal.offsetHeight - wh;
+      screenPositions = [wh, wh + horizontalWidth / 2, wh + horizontalWidth];
+
+      if (timer !== null) {
+        // user is currently scrolling
+        clearTimeout(timer);
+      }
+      timer = setTimeout(function() {
+        // user just stopped scrolling
+        if (window.scrollY > window.innerHeight) {
+          // if we are in the horizontal section, move the scroll to the closest project
+          let closestScreen = getClosestScreen(window.scrollY);
+          document.documentElement.scrollTop = document.body.scrollTop = closestScreen;
+        }
+      }, 650);
     });
   });
 });
@@ -61,22 +84,29 @@ function setTranslateX(element, progression) {
 
 /* end of horizontal scroll */
 
+function getClosestScreen(scrollPosition) {
+  return screenPositions.reduce(function(prev, curr) {
+    return Math.abs(curr - scrollPosition) < Math.abs(prev - scrollPosition)
+      ? curr
+      : prev;
+  });
+}
 
 window.addEventListener("load", function(event) {
-  
-  let paragraphs = document.querySelectorAll('p');
-  document.querySelector('.title').style.transform = 'translateY(0px) scale(1)';
+  let paragraphs = document.querySelectorAll(".home p");
+  document.querySelector(".title").style.transform = "translateY(0px) scale(1)";
   setTimeout(() => {
-    document.querySelector('.subtitle').style.transform = 'translateY(0px) scale(1)';
+    document.querySelector(".subtitle").style.transform =
+      "translateY(0px) scale(1)";
   }, 500);
   setTimeout(() => {
     for (let i = 0; i < paragraphs.length; i++) {
       const p = paragraphs[i];
-      p.style.opacity= '1';
-      p.style.transform= 'scale(1)';
+      p.style.opacity = "1";
+      p.style.transform = "scale(1)";
     }
   }, 1500);
   setTimeout(() => {
-    document.querySelector('.scroll').style.opacity = '1';
-  }, 2100);
+    document.querySelector(".scroll").style.opacity = "1";
+  }, 2200);
 });
