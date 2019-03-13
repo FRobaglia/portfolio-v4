@@ -42,7 +42,7 @@ h3 {
   background-color: $green;
   height: 100%;
   text-align: center;
-  color: $white;
+  color: $black;
   cursor: pointer;
   transition: color 0.15s;
   font-family: 'SourceSansPro';
@@ -57,7 +57,7 @@ h3 {
 
   &:hover {
     color: transparent;
-    -webkit-text-stroke: 3px $white;
+    -webkit-text-stroke: 3px $black;
   }
 }
 

@@ -43,7 +43,6 @@ horizontals.forEach(function(horizontal) {
       // Set the translation for the element
       setTranslateX(inner, progression);
 
-
       // lock scroll on the closest project
 
       let wh = window.innerHeight;
@@ -56,8 +55,11 @@ horizontals.forEach(function(horizontal) {
       }
       timer = setTimeout(function() {
         // user just stopped scrolling
-        if (window.scrollY > window.innerHeight) {
-          // if we are in the horizontal section, move the scroll to the closest project
+        if (
+          window.scrollY > window.innerHeight ||
+          window.innerHeight - window.scrollY < 200
+        ) {
+          // if we are in the horizontal section or almost on it, move the scroll to the closest project
           let closestScreen = getClosestScreen(window.scrollY);
           document.documentElement.scrollTop = document.body.scrollTop = closestScreen;
         }
