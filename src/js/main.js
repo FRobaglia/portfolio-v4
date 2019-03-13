@@ -76,4 +76,7 @@ window.addEventListener("load", function(event) {
       p.style.transform= 'scale(1)';
     }
   }, 1500);
+  setTimeout(() => {
+    document.querySelector('.scroll').style.opacity = '1';
+  }, 2100);
 });

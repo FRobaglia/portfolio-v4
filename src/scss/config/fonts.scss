@@ -7,9 +7,20 @@
   font-family: 'PTSans';
   font-weight: bold;
 }
+
 @font-face {
   src: url(../assets/fonts/SourceSansPro/SourceSansPro-Regular.ttf) format('truetype');
   font-family: 'SourceSansPro';
+}
+@font-face {
+  src: url(../assets/fonts/SourceSansPro/SourceSansPro-Black.ttf) format('truetype');
+  font-family: 'SourceSansPro';
+  font-weight: 900;
+}
+@font-face {
+  src: url(../assets/fonts/SourceSansPro/SourceSansPro-Bold.ttf) format('truetype');
+  font-family: 'SourceSansPro';
+  font-weight: bold;
 }
 @font-face {
   src: url(../assets/fonts/SourceSansPro/SourceSansPro-Light.ttf) format('truetype');

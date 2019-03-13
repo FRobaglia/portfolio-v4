@@ -1,6 +1,53 @@
+@keyframes float {
+  from {
+    transform: translate(-50%, -10px);
+  }
+  50% {
+    transform: translate(-50%, 0px);
+  }
+  to {
+    transform: translate(-50%, -10px);
+  }
+}
+
 .home {
+  position: relative;
   height: 100vh;
   margin: 0 auto;
-  width: 60%;
+  width: 560px;
   text-align: center;
+}
+
+.title {
+  cursor: default;
+  transition: transform 1s ease-out, color 0.3s;
+  transform: translateY(-100vw) scale(0);
+}
+.subtitle {
+  transition: 1s ease-out;
+  transform: translateY(100vw) scale(0);
+}
+
+.scroll {
+  opacity: 0;
+  transition: opacity 0.3s;
+  animation: float 2.5s infinite ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  & .scroll-arrow {
+    cursor: pointer;
+    margin: 8px auto;
+    width: 36px;
+    height: 36px;
+    background-size: cover;
+    background: url(../assets/imgs/icons/down-arrow.svg);
+  }
+
+  & .scroll-text {
+    font-family: 'PTSans';
+    font-weight: bold;
+  }
 }
