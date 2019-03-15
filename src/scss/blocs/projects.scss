@@ -10,6 +10,47 @@
 
 .main-content {
   position: relative;
-  margin-left: 144px; // cause project names (h3) width is 144px 
+  margin-left: 144px; // cause project names (h3) width is 144px
   height: 100%;
+}
+
+.right-content {
+  margin-top: 72px;
+  margin-left: 72px;
+  width: 45%;
+}
+
+.project-img {
+  position: relative;
+  cursor: pointer;
+  & img {
+    box-shadow: 4px 4px 4px $black;
+    transition: filter 0.3s, box-shadow 0.3s;
+    width: 100%;
+  }
+  
+  & h4 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 16px)) scale(0.4);
+    position: absolute;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+  }
+
+  &:hover img{
+    filter: brightness(50%);
+  }
+  &:hover h4 {
+    transform: translate(-50%, calc(-50% - 16px)) scale(1);
+    opacity: 1;
+  }
+
+  & figcaption {
+    text-align: center;
+    margin: 16px;
+    color: $grey;
+    font-size: 14px;
+    font-weight: bold;
+  }
 }
