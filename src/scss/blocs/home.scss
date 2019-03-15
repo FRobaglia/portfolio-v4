@@ -26,16 +26,18 @@
 
 .title {
   cursor: default;
-  transition: transform 1s ease-out, color 0.4s;
+  transition: transform 1s ease-out, color 0.25s;
   transform: translateY(-100vw) scale(0);
 
-  &:hover {
+  &:hover, &:hover ~ .subtitle {
   color: transparent;
   -webkit-text-stroke: 1px $green;
   }
 }
+
 .subtitle {
-  transition: 1s ease-out;
+  transition: 1s ease-out, color 0.25s;
+  cursor: default;
   transform: translateY(100vw) scale(0);
 }
 

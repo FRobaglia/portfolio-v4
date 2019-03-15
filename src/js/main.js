@@ -1,4 +1,4 @@
-/* start of horizontal scroll */
+/* start of horizontal scroll & other scroll events*/
 
 let timer = null;
 let screenPositions = [];
@@ -43,7 +43,8 @@ horizontals.forEach(function(horizontal) {
       // Set the translation for the element
       setTranslateX(inner, progression);
 
-      // lock scroll on the closest project
+
+      /* lock scroll on the closest project */
 
       let wh = window.innerHeight;
       let horizontalWidth = horizontal.offsetHeight - wh;
@@ -63,7 +64,7 @@ horizontals.forEach(function(horizontal) {
           let closestScreen = getClosestScreen(window.scrollY);
           document.documentElement.scrollTop = document.body.scrollTop = closestScreen;
         }
-      }, 650);
+      }, 220);
     });
   });
 });
@@ -82,11 +83,12 @@ function setTranslateX(element, progression) {
   // The transform factor is the size to move multiplied by the progression
   var transform = -1 * toMove * progression + "px";
   element.style.transform = "translateX(" + transform + ")";
+
+
 }
 
-/* end of horizontal scroll */
-
 function getClosestScreen(scrollPosition) {
+  // gets the closest number of scrollPosition in the array screenPositions
   return screenPositions.reduce(function(prev, curr) {
     return Math.abs(curr - scrollPosition) < Math.abs(prev - scrollPosition)
       ? curr
@@ -94,8 +96,13 @@ function getClosestScreen(scrollPosition) {
   });
 }
 
+/* end of horizontal scroll */
+
+
+
+let paragraphs = document.querySelectorAll(".home p");
+
 window.addEventListener("load", function(event) {
-  let paragraphs = document.querySelectorAll(".home p");
   document.querySelector(".title").style.transform = "translateY(0px) scale(1)";
   setTimeout(() => {
     document.querySelector(".subtitle").style.transform =
@@ -112,3 +119,5 @@ window.addEventListener("load", function(event) {
     document.querySelector(".scroll").style.opacity = "1";
   }, 2200);
 });
+
+

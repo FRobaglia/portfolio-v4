@@ -7,3 +7,9 @@
   flex-basis: 100vw;
   height: 100vh;
 }
+
+.main-content {
+  position: relative;
+  margin-left: 144px; // cause project names (h3) width is 144px 
+  height: 100%;
+}
