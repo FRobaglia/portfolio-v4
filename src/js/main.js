@@ -59,6 +59,7 @@ horizontals.forEach(function(horizontal) {
         if (
           window.scrollY > window.innerHeight ||
           window.innerHeight - window.scrollY < 200
+          && window.scrollY < wh+ horizontalWidth
         ) {
           // if we are in the horizontal section or almost on it, move the scroll to the closest project
           let closestScreen = getClosestScreen(window.scrollY);

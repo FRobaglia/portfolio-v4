@@ -14,22 +14,14 @@
   margin-left: 144px; // cause project names (h3) width is 144px
   height: 100%;
 }
-
-.separator {
-  width: 3px;
-  height: 80%;
+.project-technos {
   margin-top: 5%;
-  margin-left: 72px;
-  background-color: $black;
-}
-.technos {
-  margin-top: 72px;
-  margin-left: 72px;
+  margin-left: 5%;
 }
 .project-description {
-  margin-top: 72px;
-  margin-left: 72px;
-  width: 45%;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 50%;
 
   & p {
     margin: 5%;
@@ -40,7 +32,8 @@
     position: relative;
     text-align: center;
     margin: 0 auto;
-    max-width: 150px;
+    margin-top: 15%;
+    max-width: 200px;
     background-color: $black;
 
     & a {
@@ -59,19 +52,19 @@
       display: block;
       position: absolute;
       bottom: 0;
-      height: 0;
+      width: 0;
+      height: 100%;
       left: 0;
-      transition: height 0.2s;
-      width: 100%;
+      transition: width 0.5s, transform 1s;
       background-color: $green;
     }
 
     &:hover a{
-      color: $white;
+      color: $black;
     }
 
     &:hover::before {
-      height: 100%;
+      width: 100%;
     }
   }
 }
@@ -80,7 +73,8 @@
   position: relative;
   cursor: pointer;
   & img {
-    transition: filter 0.3s, box-shadow 0.3s;
+    filter: brightness(80%);
+    transition: filter 0.5s;
     width: 100%;
   }
   
@@ -94,7 +88,7 @@
   }
 
   &:hover img{
-    filter: brightness(50%);
+    filter: brightness(40%);
   }
   &:hover h4 {
     transform: translate(-50%, calc(-50% - 16px)) scale(1);
