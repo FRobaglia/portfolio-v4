@@ -31,7 +31,7 @@
 
   &:hover, &:hover ~ .subtitle {
   color: transparent;
-  -webkit-text-stroke: 1px $green;
+  -webkit-text-stroke: 1px var(--green);
   }
 }
 
@@ -49,17 +49,19 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  color: var(--black);
 
   & .scroll-arrow {
     cursor: pointer;
     margin: 8px auto;
     width: 36px;
     height: 36px;
-    background-size: cover;
-    background: url(../assets/imgs/icons/down-arrow.svg);
+    transition: fill 0.3s;
+    fill: var(--black);
   }
 
   & .scroll-text {
+    transition: color 0.3s;
     font-family: 'PTSans';
     font-weight: bold;
   }

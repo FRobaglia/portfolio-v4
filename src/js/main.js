@@ -122,3 +122,19 @@ window.addEventListener("load", function(event) {
 });
 
 
+/* darkmode */
+
+let darkMode = false;
+
+document.querySelector('.title').addEventListener('click', function() {
+  if (!darkMode) {
+  document.documentElement.style.setProperty('--black', '#eee')
+  document.documentElement.style.setProperty('--white', '#222')
+  document.documentElement.style.setProperty('--grey', '#ddd')
+  } else {
+  document.documentElement.style.setProperty('--black', '#222')
+  document.documentElement.style.setProperty('--white', '#eee')
+  document.documentElement.style.setProperty('--grey', '#555')
+  }
+  darkMode = !darkMode
+})
