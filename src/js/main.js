@@ -103,7 +103,7 @@ function getClosestScreen(scrollPosition) {
 
 let paragraphs = document.querySelectorAll(".home p");
 
-window.addEventListener("DOMContentLoaded", function(event) {
+window.addEventListener("load", function(event) {
   document.querySelector(".title").style.transform = "translateY(0px) scale(1)";
   setTimeout(() => {
     document.querySelector(".subtitle").style.transform =
