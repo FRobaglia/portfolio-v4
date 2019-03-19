@@ -15,6 +15,7 @@
   height: 100%;
 }
 .project-technos {
+  width: 100%;
   margin-top: 5%;
   margin-left: 5%;
 
@@ -105,7 +106,8 @@
   position: relative;
   cursor: pointer;
   & img {
-    filter: brightness(80%);
+    box-shadow: 10px 12px 55px var(--green);
+    filter: brightness(90%);
     transition: filter 0.5s;
     width: 100%;
   }

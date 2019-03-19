@@ -26,6 +26,7 @@
 
 .name {
   cursor: pointer;
+  user-select: none;
 
   &:hover .title,
   &:hover .subtitle {
