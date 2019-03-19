@@ -26,6 +26,11 @@
     text-align: left;
     width: 90%;
   }
+
+  & .github {
+    text-align: center;
+    font-size: 14px;
+  }
 }
 
 .project-description {
@@ -60,7 +65,7 @@
     margin: 0 auto;
     margin-top: 10%;
     max-width: 200px;
-    background-color: var(--green);
+    background-color: var(--black);
 
     & a {
       transition: color 0.2s;
@@ -82,7 +87,7 @@
       height: 100%;
       left: 0;
       transition: width 0.5s, transform 1s;
-      background-color: var(--black);
+      background-color: var(--green);
     }
 
     &:hover a{

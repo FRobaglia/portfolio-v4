@@ -57,9 +57,9 @@ horizontals.forEach(function(horizontal) {
       timer = setTimeout(function() {
         // user just stopped scrolling
         if (
-          window.scrollY > window.innerHeight ||
-          window.innerHeight - window.scrollY < 200
-          && window.scrollY < wh+ horizontalWidth
+          (window.scrollY > window.innerHeight ||
+          window.innerHeight - window.scrollY < 200)
+          && (window.scrollY < wh + horizontalWidth)
         ) {
           // if we are in the horizontal section or almost on it, move the scroll to the closest project
           let closestScreen = getClosestScreen(window.scrollY);
@@ -126,7 +126,7 @@ window.addEventListener("load", function(event) {
 
 let darkMode = false;
 
-document.querySelector('.title').addEventListener('click', function() {
+document.querySelector('.name').addEventListener('click', function() {
   if (!darkMode) {
   document.documentElement.style.setProperty('--black', '#eee')
   document.documentElement.style.setProperty('--white', '#222')
