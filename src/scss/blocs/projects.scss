@@ -17,24 +17,46 @@
 .project-technos {
   margin-top: 5%;
   margin-left: 5%;
+
+  & p {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 90%;
+  }
 }
+
 .project-description {
   margin-top: 5%;
   margin-left: 5%;
-  width: 50%;
 
-  & p {
-    margin: 5%;
+  & .tags {
+    margin-top: 10%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    & li {
+      margin: 10px;
+      margin-top: 0;
+      margin-left: 0;
+      text-align: center;
+      min-width: 10%;
+      background-color: $black;
+      padding: 5px;
+      border-radius: 3px;
+      color: $white;
+    }
   }
-
+  
   & .discover {
     z-index: 4;
     position: relative;
     text-align: center;
     margin: 0 auto;
-    margin-top: 15%;
+    margin-top: 10%;
     max-width: 200px;
-    background-color: $black;
+    background-color: $green;
 
     & a {
       transition: color 0.2s;
@@ -56,11 +78,11 @@
       height: 100%;
       left: 0;
       transition: width 0.5s, transform 1s;
-      background-color: $green;
+      background-color: $black;
     }
 
     &:hover a{
-      color: $black;
+      color: $white;
     }
 
     &:hover::before {
@@ -70,6 +92,7 @@
 }
 
 .project-img {
+  width: 40vw;
   position: relative;
   cursor: pointer;
   & img {
@@ -98,7 +121,7 @@
   & figcaption {
     text-align: center;
     margin: 16px;
-    color: $grey;
+    color: #666;
     font-size: 14px;
     font-weight: bold;
   }
