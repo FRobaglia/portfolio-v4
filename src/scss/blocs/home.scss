@@ -14,7 +14,7 @@
   position: relative;
   height: 100vh;
   margin: 0 auto;
-  width: 560px;
+  max-width: 600px;
   text-align: center;
 
   & p {
@@ -68,5 +68,14 @@
     transition: color 0.3s;
     font-family: "PTSans";
     font-weight: bold;
+  }
+}
+
+@media (max-width: 868px) {
+  .home {
+    max-width: initial;
+    .title {
+      padding-top: 6vw;
+    }
   }
 }
