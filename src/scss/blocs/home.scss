@@ -21,11 +21,6 @@
   }
 }
 
-.subtitle {
-  transition: 1s ease-out, color 0.25s;
-  transform: translateY(100vw) scale(0);
-}
-
 .scroll {
   position: absolute;
   bottom: 0;
@@ -48,17 +43,30 @@
   }
 }
 
+h1 {
+  padding-top: 24px;
+}
+
 @media (min-width: 868px) {
+  h1 {
+    padding-top: 108px;
+  }
   .home {
     max-width: 600px;
-    .title,
-    .subtitle {
+    .title, .subtitle {
       transition: transform 1s ease-out, color 0.25s;
       transform: translateY(-100vw) scale(0);
     }
+    .title.is-transitioned, .subtitle.is-transitioned {
+      transform: initial;
+    }
     & p {
       opacity: 0;
-      transform: scale(0.2)
+      transform: scale(0.2);
+      &.is-transitioned {
+        opacity: 1;
+        transform: initial;
+      }
     }
   }
 

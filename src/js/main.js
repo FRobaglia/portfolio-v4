@@ -96,28 +96,26 @@ function getClosestScreen(scrollPosition) {
 
 /* end of horizontal scroll */
 
-let paragraphs = document.querySelectorAll(".home p");
+let homeParagraphs = document.querySelectorAll(".home p");
 
-if (window.innerWidth > 868) {
-  window.addEventListener("load", function(event) {
-    document.querySelector(".title").style.transform =
-      "translateY(0px) scale(1)";
-    setTimeout(() => {
-      document.querySelector(".subtitle").style.transform =
-        "translateY(0px) scale(1)";
-    }, 500);
-    setTimeout(() => {
-      for (let i = 0; i < paragraphs.length; i++) {
-        const p = paragraphs[i];
-        p.style.opacity = "1";
-        p.style.transform = "scale(1)";
-      }
-    }, 1500);
-    setTimeout(() => {
-      document.querySelector(".scroll").style.opacity = "1";
-    }, 2200);
-  });
-}
+console.log(window.innerWidth);
+
+let animations = () => {
+  document.querySelector(".title").classList.add('is-transitioned')
+  setTimeout(() => {
+    document.querySelector(".subtitle").classList.add('is-transitioned');
+  }, 500);
+  setTimeout(() => {
+    homeParagraphs.forEach(paragraph => {
+      paragraph.classList.add('is-transitioned')
+    });
+  }, 1500);
+  setTimeout(() => {
+    document.querySelector(".scroll").style.opacity = "1";
+  }, 2200);
+};
+
+window.addEventListener("load", animations)
 
 /* darkmode */
 
