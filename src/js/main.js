@@ -43,7 +43,6 @@ horizontals.forEach(function(horizontal) {
       // Set the translation for the element
       setTranslateX(inner, progression);
 
-
       /* lock scroll on the closest project */
 
       let wh = window.innerHeight;
@@ -58,8 +57,8 @@ horizontals.forEach(function(horizontal) {
         // user just stopped scrolling
         if (
           (window.scrollY > window.innerHeight ||
-          window.innerHeight - window.scrollY < 200)
-          && (window.scrollY < wh + horizontalWidth)
+            window.innerHeight - window.scrollY < 200) &&
+          window.scrollY < wh + horizontalWidth
         ) {
           // if we are in the horizontal section or almost on it, move the scroll to the closest project
           let closestScreen = getClosestScreen(window.scrollY);
@@ -84,8 +83,6 @@ function setTranslateX(element, progression) {
   // The transform factor is the size to move multiplied by the progression
   var transform = -1 * toMove * progression + "px";
   element.style.transform = "translateX(" + transform + ")";
-
-
 }
 
 function getClosestScreen(scrollPosition) {
@@ -99,42 +96,42 @@ function getClosestScreen(scrollPosition) {
 
 /* end of horizontal scroll */
 
-
-
 let paragraphs = document.querySelectorAll(".home p");
 
-window.addEventListener("load", function(event) {
-  document.querySelector(".title").style.transform = "translateY(0px) scale(1)";
-  setTimeout(() => {
-    document.querySelector(".subtitle").style.transform =
+if (window.innerWidth > 868) {
+  window.addEventListener("load", function(event) {
+    document.querySelector(".title").style.transform =
       "translateY(0px) scale(1)";
-  }, 500);
-  setTimeout(() => {
-    for (let i = 0; i < paragraphs.length; i++) {
-      const p = paragraphs[i];
-      p.style.opacity = "1";
-      p.style.transform = "scale(1)";
-    }
-  }, 1500);
-  setTimeout(() => {
-    document.querySelector(".scroll").style.opacity = "1";
-  }, 2200);
-});
-
+    setTimeout(() => {
+      document.querySelector(".subtitle").style.transform =
+        "translateY(0px) scale(1)";
+    }, 500);
+    setTimeout(() => {
+      for (let i = 0; i < paragraphs.length; i++) {
+        const p = paragraphs[i];
+        p.style.opacity = "1";
+        p.style.transform = "scale(1)";
+      }
+    }, 1500);
+    setTimeout(() => {
+      document.querySelector(".scroll").style.opacity = "1";
+    }, 2200);
+  });
+}
 
 /* darkmode */
 
 let darkMode = false;
 
-document.querySelector('.name').addEventListener('click', function() {
+document.querySelector(".name").addEventListener("click", function() {
   if (!darkMode) {
-  document.documentElement.style.setProperty('--black', '#eee')
-  document.documentElement.style.setProperty('--white', '#222')
-  document.documentElement.style.setProperty('--grey', '#ddd')
+    document.documentElement.style.setProperty("--black", "#eee");
+    document.documentElement.style.setProperty("--white", "#222");
+    document.documentElement.style.setProperty("--grey", "#ddd");
   } else {
-  document.documentElement.style.setProperty('--black', '#222')
-  document.documentElement.style.setProperty('--white', '#eee')
-  document.documentElement.style.setProperty('--grey', '#555')
+    document.documentElement.style.setProperty("--black", "#222");
+    document.documentElement.style.setProperty("--white", "#eee");
+    document.documentElement.style.setProperty("--grey", "#555");
   }
-  darkMode = !darkMode
-})
+  darkMode = !darkMode;
+});
