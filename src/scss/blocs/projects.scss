@@ -8,133 +8,64 @@
   height: 100vh;
 }
 
-.main-content {
-  position: relative;
-  display: flex;
-  margin-left: 144px; // cause project names (h3) width is 144px
-  height: 100%;
-}
-.project-technos {
-  width: 100%;
-  margin-top: 5%;
-  margin-left: 5%;
-
-  & p {
-    margin: 20px;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    text-align: left;
-    width: 90%;
-  }
-
-  & .github {
-    text-align: center;
-    font-size: 14px;
-  }
-}
-
 .project-description {
-  margin-top: 5%;
-  margin-left: 5%;
-
-  & .tags {
-    margin-top: 10%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-
-    & li {
-      font-family: 'PTSans';
-      font-weight: bold;
-      margin: 10px;
-      margin-top: 0;
-      margin-left: 0;
-      text-align: center;
-      min-width: 10%;
-      background-color: var(--black);
-      padding: 5px;
-      border-radius: 3px;
-      color: var(--white);
-    }
-  }
-  
-  & .discover {
-    z-index: 4;
-    position: relative;
-    text-align: center;
+  margin-left: 144px;
+  width: calc(100% - 144px);
+  height: 100%;
+  .img {
+    transition: transform 0.3s, filter 0.3s;
+    height: 50%;
     margin: 0 auto;
-    margin-top: 10%;
-    max-width: 200px;
+  }
+  img {
+    margin: 0 auto;
+    margin-top: 6vh;
+    box-shadow: 0px 0px 150px var(--green);
+    display: block;
+    height: 100%;
+  }
+  .img:hover {
+    filter: brightness(70%);
+    transform: scale(0.85);
+  }
+  .tags {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 7vh;
+
+    li {
+      border-radius: 5px;
+      text-align: center;
+      min-width: 64px;
+      margin: 16px;
+      padding: 6px;
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+  .discover {
     background-color: var(--black);
-
-    & a {
-      transition: color 0.2s;
-      z-index: 5;
-      display: block;
-      padding: 15px;
-      color: var(--white);
-      font-family: "PTSans";
-      font-weight: bold;
-    }
-
-    &::before {
-      z-index: -1;
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 0;
-      width: 0;
-      height: 100%;
-      left: 0;
-      transition: width 0.5s, transform 1s;
-      background-color: var(--green);
-    }
-
-    &:hover a{
-      color: var(--white);
-    }
-
-    &:hover::before {
-      width: 100%;
-    }
-  }
-}
-
-.project-img {
-  width: 40vw;
-  position: relative;
-  cursor: pointer;
-  & img {
-    box-shadow: 10px 12px 55px var(--green);
-    filter: brightness(90%);
-    transition: filter 0.5s, transform 0.5s;
-    width: 100%;
-  }
-  
-  & h4 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, calc(-50% - 16px)) scale(0.4);
-    position: absolute;
-    transition: transform 0.3s, opacity 0.3s;
-    opacity: 0;
-  }
-
-  &:hover img{
-    transform: scale(0.9);
-    filter: brightness(40%);
-  }
-  &:hover h4 {
-    transform: translate(-50%, calc(-50% - 16px)) scale(1);
-    opacity: 1;
-  }
-
-  & figcaption {
+    color: var(--white);
+    transition: transform 0.8s, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0px 0px 0.1px var(--green) inset;
     text-align: center;
-    margin: 16px;
-    color: var(--grey);
-    font-size: 14px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 6vh;
+    width: 150px;
+    line-height: 48px;
+    height: 48px;
+    font-size: 18px;
+    font-family: 'PTSans';
     font-weight: bold;
+
+    &:hover {
+      transform: scale(0.95);
+      box-shadow: 150px 0px 0px var(--green) inset;
+      color: var(--black);
+    }
   }
 }
