@@ -35,10 +35,11 @@
     margin-top: 7vh;
 
     li {
+      font-size: 18px;
       border-radius: 5px;
       text-align: center;
       min-width: 64px;
-      margin: 16px;
+      margin: 0 16px;
       padding: 6px;
       background-color: var(--black);
       color: var(--white);
@@ -58,12 +59,12 @@
     width: 150px;
     line-height: 48px;
     height: 48px;
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'PTSans';
     font-weight: bold;
 
     &:hover {
-      transform: scale(0.95);
+      transform: scale(0.92);
       box-shadow: 150px 0px 0px var(--green) inset;
       color: var(--black);
     }
