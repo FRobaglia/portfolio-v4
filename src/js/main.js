@@ -98,8 +98,6 @@ function getClosestScreen(scrollPosition) {
 
 let homeParagraphs = document.querySelectorAll(".home p");
 
-console.log(window.innerWidth);
-
 let animations = () => {
   document.querySelector(".title").classList.add('is-transitioned')
   setTimeout(() => {
@@ -132,4 +130,15 @@ document.querySelector(".name").addEventListener("click", function() {
     document.documentElement.style.setProperty("--grey", "#555");
   }
   darkMode = !darkMode;
+});
+
+/* projects animation on click */
+
+
+let projectImgs = document.querySelectorAll('.project-description')
+
+projectImgs.forEach(img => {
+  img.querySelector('.img-container').addEventListener('click', function() {
+    img.parentElement.classList.add('is-clicked');
+  })
 });

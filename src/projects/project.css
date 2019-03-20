@@ -1,0 +1,9 @@
+main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  filter: blur(2px) brightness(70%);
+}

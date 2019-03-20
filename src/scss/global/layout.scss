@@ -54,7 +54,7 @@ h3 {
   text-align: center;
   color: var(--black);
   cursor: pointer;
-  transition: color 0.1s, filter 0.1s;
+  transition: transform 0.6s ease-in-out, top 1s, left 1s, filter 0.5s, color 0.5s, writing-mode 1s;
   font-family: "SourceSansPro";
   font-weight: 900;
   padding: 32px;

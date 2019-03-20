@@ -2,33 +2,34 @@
   display: flex;
 }
 
-.screen.projects__project {
-  position: relative;
-  flex-basis: 100vw;
-  height: 100vh;
-}
-
 .project-description {
+  position: relative;
   margin-left: 144px;
   width: calc(100% - 144px);
   height: 100%;
-  .img {
+  .img-container {
     transition: transform 0.3s, filter 0.3s;
-    height: 50%;
+    width: 60%;
     margin: 0 auto;
+    margin-top: 10vh;
   }
   img {
+    transition: transform 1s, filter 1s;
     margin: 0 auto;
-    margin-top: 6vh;
     box-shadow: 0px 0px 150px var(--green);
     display: block;
-    height: 100%;
+    width: 100%;
   }
-  .img:hover {
+  .img-container:hover {
     filter: brightness(70%);
-    transform: scale(0.85);
+    img {
+      filter: blur(2px);
+      transform: scale(0.8);
+    }
   }
+
   .tags {
+    transition: all 0.5s;
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -48,7 +49,7 @@
   .discover {
     background-color: var(--black);
     color: var(--white);
-    transition: transform 0.8s, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: all 0.5s;
     z-index: 2;
     position: relative;
     box-shadow: 0px 0px 0.1px var(--green) inset;
@@ -56,17 +57,67 @@
     display: block;
     margin: 0 auto;
     margin-top: 6vh;
-    width: 150px;
-    line-height: 48px;
-    height: 48px;
+    width: 180px;
+    line-height: 56px;
+    height: 56px;
     font-size: 20px;
     font-family: 'PTSans';
     font-weight: bold;
 
     &:hover {
-      transform: scale(0.92);
-      box-shadow: 150px 0px 0px var(--green) inset;
+      transform: scale(0.88);
+      box-shadow: 180px 0px 0px var(--green) inset;
       color: var(--black);
+    }
+  }
+}
+
+
+
+.screen.projects__project {
+  position: relative;
+  flex-basis: 100vw;
+  height: 100vh;
+
+  &.is-clicked {
+    width: 100vw;
+
+    h3 {
+      font-size: 10vw;
+      background-color: initial;
+      z-index: 5;
+      transform: translateX(-50%) rotate(0deg);
+      writing-mode: initial;
+      height: initial;
+      top: 15%;
+      left: 50%;
+      &:hover {
+        filter: initial;
+        color: initial;
+        -webkit-text-stroke: initial;
+      }
+    }
+    .project-description {
+      top: 0;
+      left: 0;
+      margin: 0;
+      width: 100vw;
+
+      .img-container {
+        width: 100%;
+        filter: brightness(80%);
+      }
+      .tags, .discover {
+        opacity: 0;
+        transform: translateY(100vh);
+      }
+      img {
+        filter: blur(2px);
+        box-shadow: initial;
+        transform: translateY(-10vh);
+        width: 70%;
+        object-fit: cover;
+      }
     }
   }
 }

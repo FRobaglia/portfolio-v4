@@ -11,7 +11,7 @@
       media="screen"
       href="scss/styles.scss"
     />
-    <link rel="icon" type="image/png" href="assets/imgs/favicon.png" />.
+    <link rel="icon" type="image/png" href="assets/imgs/favicon.png" />
     <script defer src="js/main.js"></script>
   </head>
   <body>
@@ -58,13 +58,18 @@
         <div class="horizontal__inner">
           <div class="projects">
             <article id="FatFinger" class="screen projects__project">
-              <a target="_blank" href="https://fatfinger.netlify.com">
+              <a href="">
                 <h3>FatFinger</h3>
               </a>
 
                 <div class="project-description">
-                  <div class="img">
-                  <a target="_blank" href="https://fatfinger.netlify.com">
+                  <div id="fatFingerImg" class="img-container">
+                    <script>
+                    let delay = (url) => {
+                        setTimeout( function() { window.location = url }, 1000 );
+                      }
+                    </script>
+                  <a href="javascript:delay('projects/fatfinger.html')">
                       <img
                         src="assets/imgs/fatfinger.png"
                         alt="FatFinger Website"
@@ -89,7 +94,7 @@
                 </a>
   
                   <div class="project-description">
-                    <div class="img">
+                    <div id="uryoImg" class="img-container">
                     <a target="_blank" href="https://uryo.netlify.com">
                         <img
                           src="assets/imgs/uryo.png"
