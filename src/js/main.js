@@ -141,15 +141,18 @@ let projectLinks = document.querySelectorAll('.img-container')
 let projectLinksButtons = document.querySelectorAll('.discover');
 
 
-projectLinks.forEach(project => {
-  project.addEventListener('click', () => {
-    project.parentElement.parentElement.classList.add('is-clicked');
-  })
-})
 
-projectLinksButtons.forEach(project => {
+for (let i = 0; i < projectLinks.length; i++) {
+  const project = projectLinks[i];
   project.addEventListener('click', () => {
-    console.log(project.parentElement.parentElement)
+    document.documentElement.scrollTop = document.body.scrollTop = screenPositions[i];
     project.parentElement.parentElement.classList.add('is-clicked');
   })
-})
+}
+for (let i = 0; i < projectLinksButtons.length; i++) {
+  const project = projectLinksButtons[i];
+  project.addEventListener('click', () => {
+    document.documentElement.scrollTop = document.body.scrollTop = screenPositions[i];
+    project.parentElement.parentElement.classList.add('is-clicked');
+  })
+}
