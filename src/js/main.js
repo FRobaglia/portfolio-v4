@@ -113,7 +113,9 @@ let animations = () => {
   }, 2200);
 };
 
-window.addEventListener("load", animations)
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(animations, 300);
+})
 
 /* darkmode */
 
@@ -135,10 +137,19 @@ document.querySelector(".name").addEventListener("click", function() {
 /* projects animation on click */
 
 
-let projectImgs = document.querySelectorAll('.project-description')
+let projectLinks = document.querySelectorAll('.img-container')
+let projectLinksButtons = document.querySelectorAll('.discover');
 
-projectImgs.forEach(img => {
-  img.querySelector('.img-container').addEventListener('click', function() {
-    img.parentElement.classList.add('is-clicked');
+
+projectLinks.forEach(project => {
+  project.addEventListener('click', () => {
+    project.parentElement.parentElement.classList.add('is-clicked');
   })
-});
+})
+
+projectLinksButtons.forEach(project => {
+  project.addEventListener('click', () => {
+    console.log(project.parentElement.parentElement)
+    project.parentElement.parentElement.classList.add('is-clicked');
+  })
+})

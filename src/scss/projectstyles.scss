@@ -1,0 +1,15 @@
+@import 'vendors/reset.scss';
+@import 'config/colors.scss';
+@import 'config/fonts.scss';
+@import 'global/layout.scss';
+
+main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+  filter: blur(2px) brightness(70%);
+}
