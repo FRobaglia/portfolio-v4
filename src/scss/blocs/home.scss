@@ -29,7 +29,6 @@
   transform: translateX(-50%);
 
   & .scroll-arrow {
-    cursor: pointer;
     margin: 8px auto;
     width: 36px;
     height: 36px;
@@ -72,7 +71,6 @@ h1 {
   }
 
   .name {
-    cursor: pointer;
     user-select: none;
 
     &:hover .title,

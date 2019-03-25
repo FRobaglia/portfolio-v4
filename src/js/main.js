@@ -137,6 +137,11 @@ document.querySelector(".name").addEventListener("click", function() {
 /* projects animation on click */
 
 
+let delay = (url) => {
+  setTimeout( function() { window.location = url }, 1000 );
+}
+
+
 let projectLinks = document.querySelectorAll('.img-container')
 let projectLinksButtons = document.querySelectorAll('.discover');
 
@@ -147,6 +152,7 @@ for (let i = 0; i < projectLinks.length; i++) {
   project.addEventListener('click', () => {
     document.documentElement.scrollTop = document.body.scrollTop = screenPositions[i];
     project.parentElement.parentElement.classList.add('is-clicked');
+    delay(project.dataset.url);
   })
 }
 for (let i = 0; i < projectLinksButtons.length; i++) {
@@ -154,5 +160,43 @@ for (let i = 0; i < projectLinksButtons.length; i++) {
   project.addEventListener('click', () => {
     document.documentElement.scrollTop = document.body.scrollTop = screenPositions[i];
     project.parentElement.parentElement.classList.add('is-clicked');
+    delay(project.dataset.url);
+  })
+}
+
+
+/* cursor */
+
+let hovers = document.querySelectorAll('[data-cursor~="hover"]');
+console.log(hovers)
+let cursor = document.querySelector(".cursor");
+let lastPos = 0;
+let cursPos;
+
+let yPos;
+let xPos;
+
+window.addEventListener("scroll", scrollUpdate);
+
+function scrollUpdate(e) {
+  lastPos = window.scrollY;
+  cursor.style.top = -13 + lastPos + cursPos + "px";
+}
+
+document.addEventListener("mousemove", mouseMove);
+
+function mouseMove(e) {
+  cursPos = e.clientY;
+  cursor.style.left = -14 + e.clientX + "px";
+  cursor.style.top = -14 + e.clientY + lastPos + "px";
+}
+
+for (let i = 0; i < hovers.length; i++) {
+  const hoverEl = hovers[i];
+  hoverEl.addEventListener('mouseover', function() {
+    cursor.classList.add('is-hovering');
+  })
+  hoverEl.addEventListener('mouseout', function() {
+    cursor.classList.remove('is-hovering');
   })
 }

@@ -14,14 +14,15 @@
     <script defer src="js/main.js"></script>
   </head>
   <body>
+    <div class="cursor"></div>
     <header class="home">
-      <div class="name">
+      <div class="name" data-cursor="hover">
       <h1 class="title">Félix Robaglia</h1>
       <h2 class="subtitle">front-end dev</h2>
       </div>
       <p>
         Currenty in my first year as a web student at
-        <a class="link" target="_blank" href="https://www.hetic.net">HETIC</a>,
+        <a data-cursor="hover" class="link" target="_blank" href="https://www.hetic.net">HETIC</a>,
         I'm really interested about front-end technologies and mobile apps, but
         I love learning no matter the subject. I'm looking for a 3 month (July
         to October 2019) internship.
@@ -29,18 +30,19 @@
       <p>
         Take a look at my
         <a
+          data-cursor="hover"
           class="link"
           target="_blank"
           href="https://www.linkedin.com/in/f%C3%A9lix-robaglia/"
           >LinkedIn</a
         >, my
-        <a class="link" target="_blank" href="https://github.com/FRobaglia"
+        <a data-cursor="hover" class="link" target="_blank" href="https://github.com/FRobaglia"
           >Github</a
         >
-        and my <a class="link" href="">CV</a> !
+        and my <a data-cursor="hover" class="link" href="">CV</a> !
       </p>
       <a href="#main">
-        <div class="scroll">
+        <div class="scroll" data-cursor="hover">
           <span class="scroll-text">SCROLL TO PROJECTS</span>
           <div class="scroll-arrow"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
             <g>
@@ -57,23 +59,16 @@
         <div class="horizontal__inner">
           <div class="projects">
             <article id="FatFinger" class="screen projects__project">
-              <a href="projects/fatfinger.html">
+              <a data-cursor="hover" href="projects/fatfinger.html">
                 <h3>FatFinger</h3>
               </a>
 
                 <div class="project-description">
-                  <div id="fatFingerImg" class="img-container">
-                    <script>
-                    let delay = (url) => {
-                        setTimeout( function() { window.location = url }, 1000 );
-                      }
-                    </script>
-                  <a href="javascript:delay('projects/fatfinger.html')">
+                  <div data-cursor="hover" id="fatFingerImg" class="img-container" data-url="projects/fatfinger.html">
                       <img
                         src="assets/imgs/fatfinger.png"
                         alt="FatFinger Website"
                       />
-                  </a>
                   </div>
 
                   <ul class="tags">
@@ -84,22 +79,20 @@
                     <li>Game</li>
                   </ul>
 
-                  <a class="discover" href="javascript:delay('projects/fatfinger.html')"> Discover </a>
+                  <button data-cursor="hover" class="discover" data-url="projects/fatfinger.html"> Discover </a>
                 </div>
             </article>
             <article id="Uryo" class="screen projects__project">
-                <a target="_blank" href="https://uryo.netlify.com">
+                <a target="_blank" href="projects/uryo.html">
                   <h3>Uryo</h3>
                 </a>
   
                   <div class="project-description">
-                    <div id="uryoImg" class="img-container">
-                    <a href="javascript:delay('projects/fatfinger.html')">
+                    <div id="uryoImg" class="img-container" data-url="projects/uryo.html">
                         <img
                           src="assets/imgs/uryo.png"
                           alt="Uryo's website homepage"
                         />
-                    </a>
                     </div>
   
                     <ul class="tags">
@@ -110,11 +103,32 @@
                       <li>Game</li>
                     </ul>
   
-                    <a class="discover" href="javascript:delay('projects/fatfinger.html')"> Discover </a>
+                    <button class="discover" data-url="projects/uryo.html"> Discover </a>
                   </div>
             </article>
             <article id="SantaRush" class="screen projects__project">
-              
+              <a target="_blank" href="projects/santarush.html">
+                <h3>Santa Rush</h3>
+              </a>
+
+                <div class="project-description">
+                  <div id="santarushImg" class="img-container" data-url="projects/santarush.html">
+                      <img
+                        src="assets/imgs/santarush.png"
+                        alt="santarush's website homepage"
+                      />
+                  </div>
+
+                  <ul class="tags">
+                    <li>Javascript</li>
+                    <li>HTML5</li>
+                    <li>SASS</li>
+                    <li>Personal project</li>
+                    <li>Game</li>
+                  </ul>
+
+                  <button class="discover" data-url="projects/santarush.html" href="javascript:delay('projects/santarush.html')"> Discover </a>
+                </div>
             </article>
           </div>
         </div>

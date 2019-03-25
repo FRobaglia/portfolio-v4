@@ -10,6 +10,10 @@
   scroll-behavior: smooth;
 }
 
+html, a, button {
+  cursor: none;
+}
+
 body {
   transition: background-color 0.3s;
   font-family: 'SourceSansPro';
@@ -48,12 +52,12 @@ h2 {
   font-size: 28px;
 }
 h3 {
+  white-space: nowrap;
   text-transform: uppercase;
   background-color: var(--black);
   color: var(--white);
   height: 100%;
   text-align: center;
-  cursor: pointer;
   transition: transform 0.3s, left 1s ease-in-out, background-color 0.2s;
   font-family: "SourceSansPro";
   font-weight: 900;
@@ -76,13 +80,13 @@ h4 {
 }
 
 a {
+  cursor: none;
   color: initial;
 }
 
 a.link {
   font-weight: 900;
   color: var(--black);
-  cursor: pointer;
   transition: box-shadow 0.3s, color 0.3s;
   box-shadow: var(--green) 0px -3px 0px inset;
 

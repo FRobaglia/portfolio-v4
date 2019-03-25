@@ -19,12 +19,16 @@
     box-shadow: 0px 0px 150px var(--green);
     display: block;
     width: 100%;
+
+    &.slow-transition {
+      transition: transform 1s;
+    }
   }
   .img-container:hover {
-    filter: brightness(35%);
+    filter: brightness(55%);
     img {
       filter: blur(2px);
-      transform: scale(0.8);
+      transform: scale(0.95);
     }
   }
 
@@ -47,6 +51,8 @@
     }
   }
   .discover {
+    outline: 0;
+    border: 0;
     background-color: var(--black);
     color: var(--white);
     transition: color 2s,transform 1.5s, box-shadow 1.5s ease-in-out;
@@ -83,6 +89,7 @@
     width: 100vw;
 
     h3 {
+      padding: 0;
       font-size: 10vw;
       background-color: initial;
       z-index: 5;
@@ -105,13 +112,14 @@
 
       .img-container {
         width: 100%;
-        filter: brightness(35%);
+        filter: brightness(55%);
       }
       .tags, .discover {
         opacity: 0;
         transform: translateY(100vh);
       }
       img {
+        transition: transform 1s;
         filter: blur(2px);
         box-shadow: initial;
         transform: translateY(-10vh);
