@@ -99,13 +99,13 @@ function getClosestScreen(scrollPosition) {
 let homeParagraphs = document.querySelectorAll(".home p");
 
 let animations = () => {
-  document.querySelector(".title").classList.add('is-transitioned')
+  document.querySelector(".title").classList.add("is-transitioned");
   setTimeout(() => {
-    document.querySelector(".subtitle").classList.add('is-transitioned');
+    document.querySelector(".subtitle").classList.add("is-transitioned");
   }, 500);
   setTimeout(() => {
     homeParagraphs.forEach(paragraph => {
-      paragraph.classList.add('is-transitioned')
+      paragraph.classList.add("is-transitioned");
     });
   }, 1500);
   setTimeout(() => {
@@ -114,8 +114,8 @@ let animations = () => {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-  setTimeout(animations, 300);
-})
+  setTimeout(animations, 1000);
+});
 
 /* darkmode */
 
@@ -136,67 +136,64 @@ document.querySelector(".name").addEventListener("click", function() {
 
 /* projects animation on click */
 
+let delay = url => {
+  setTimeout(function() {
+    window.location = url;
+  }, 1000);
+};
 
-let delay = (url) => {
-  setTimeout( function() { window.location = url }, 1000 );
-}
-
-
-let projectLinks = document.querySelectorAll('.img-container')
-let projectLinksButtons = document.querySelectorAll('.discover');
-
-
+let projectLinks = document.querySelectorAll(".img-container");
+let projectLinksButtons = document.querySelectorAll(".discover");
 
 for (let i = 0; i < projectLinks.length; i++) {
   const project = projectLinks[i];
-  project.addEventListener('click', () => {
-    document.documentElement.scrollTop = document.body.scrollTop = screenPositions[i];
-    project.parentElement.parentElement.classList.add('is-clicked');
+  project.addEventListener("click", () => {
+    document.documentElement.scrollTop = document.body.scrollTop =
+      screenPositions[i];
+    project.parentElement.parentElement.classList.add("is-clicked");
     delay(project.dataset.url);
-  })
+  });
 }
 for (let i = 0; i < projectLinksButtons.length; i++) {
   const project = projectLinksButtons[i];
-  project.addEventListener('click', () => {
-    document.documentElement.scrollTop = document.body.scrollTop = screenPositions[i];
-    project.parentElement.parentElement.classList.add('is-clicked');
+  project.addEventListener("click", () => {
+    document.documentElement.scrollTop = document.body.scrollTop =
+      screenPositions[i];
+    project.parentElement.parentElement.classList.add("is-clicked");
     delay(project.dataset.url);
-  })
+  });
 }
-
 
 /* cursor */
 
+let cursor = {
+  DOM: document.querySelector(".cursor"),
+  pos: 0,
+  lastPos: 0,
+  yPos: undefined,
+  xPos: undefined
+};
+
 let hovers = document.querySelectorAll('[data-cursor~="hover"]');
-console.log(hovers)
-let cursor = document.querySelector(".cursor");
-let lastPos = 0;
-let cursPos;
-
-let yPos;
-let xPos;
-
-window.addEventListener("scroll", scrollUpdate);
-
-function scrollUpdate(e) {
-  lastPos = window.scrollY;
-  cursor.style.top = -13 + lastPos + cursPos + "px";
-}
 
 document.addEventListener("mousemove", mouseMove);
 
+window.addEventListener('scroll', function() {
+  cursor.lastPos = window.scrollY;
+  cursor.DOM.style.top = -14 + cursor.lastPos + cursor.pos + "px";
+})
 function mouseMove(e) {
-  cursPos = e.clientY;
-  cursor.style.left = -14 + e.clientX + "px";
-  cursor.style.top = -14 + e.clientY + lastPos + "px";
+  cursor.pos = e.clientY;
+  cursor.DOM.style.left = -14 + e.clientX + "px";
+  cursor.DOM.style.top = -14 + e.clientY + cursor.lastPos + "px";
 }
 
 for (let i = 0; i < hovers.length; i++) {
   const hoverEl = hovers[i];
-  hoverEl.addEventListener('mouseover', function() {
-    cursor.classList.add('is-hovering');
-  })
-  hoverEl.addEventListener('mouseout', function() {
-    cursor.classList.remove('is-hovering');
-  })
+  hoverEl.addEventListener("mouseover", function() {
+    cursor.DOM.classList.add("is-hovering");
+  });
+  hoverEl.addEventListener("mouseout", function() {
+    cursor.DOM.classList.remove("is-hovering");
+  });
 }

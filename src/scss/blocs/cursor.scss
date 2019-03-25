@@ -3,7 +3,7 @@
   position:absolute;
   z-index: 2;
   border-radius: 28px;
-  background: #8c7ae6;
+  background: var(--green);
   opacity: 0.75;
   mix-blend-mode: difference;
   width: 28px;
@@ -11,6 +11,6 @@
   transition:transform .3s;
 
   &.is-hovering {
-    transform: scale(1.3);
+    transform: scale(2);
   }
 }
