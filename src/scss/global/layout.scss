@@ -41,7 +41,6 @@ h4 {
   font-weight: bold;
 }
 h1 {
-  padding-top: 88px;
   font-size: 56px;
 }
 
@@ -89,9 +88,9 @@ a.link {
   color: var(--black);
   transition: box-shadow 0.3s, color 0.3s;
   box-shadow: var(--green) 0px -3px 0px inset;
-
+  padding: 0 1px;
   &:hover {
-    color: var(--white);
+    color: $white; // I don't want it to change on darkmode switch
     box-shadow: var(--green) 0px -21px 0px inset;
   }
 }

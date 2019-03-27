@@ -170,8 +170,6 @@ let cursor = {
   DOM: document.querySelector(".cursor"),
   pos: 0,
   lastPos: 0,
-  yPos: undefined,
-  xPos: undefined
 };
 
 let hovers = document.querySelectorAll('[data-cursor~="hover"]');
