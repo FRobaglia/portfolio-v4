@@ -174,17 +174,18 @@ let cursor = {
 
 let hovers = document.querySelectorAll('[data-cursor~="hover"]');
 
-document.addEventListener("mousemove", mouseMove);
+document.addEventListener("mousemove", function(e) {
+  cursor.pos = e.clientY;
+  cursor.DOM.style.left = -14 + e.clientX + "px";
+  cursor.DOM.style.top = -14 + e.clientY + cursor.lastPos + "px";
+});
 
 window.addEventListener('scroll', function() {
   cursor.lastPos = window.scrollY;
   cursor.DOM.style.top = -14 + cursor.lastPos + cursor.pos + "px";
 })
-function mouseMove(e) {
-  cursor.pos = e.clientY;
-  cursor.DOM.style.left = -14 + e.clientX + "px";
-  cursor.DOM.style.top = -14 + e.clientY + cursor.lastPos + "px";
-}
+
+
 
 for (let i = 0; i < hovers.length; i++) {
   const hoverEl = hovers[i];

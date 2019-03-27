@@ -11,7 +11,7 @@
 }
 
 .home {
-  padding-top: 64px;
+  padding-top: 48px;
   position: relative;
   height: 100vh;
   margin: 0 auto;
@@ -46,7 +46,7 @@
 
 @media (min-width: 868px) {
   .home {
-    padding-top: 108px;
+    padding-top: 80px;
   }
   .home {
     max-width: 600px;
@@ -58,6 +58,7 @@
       transform: initial;
     }
     & p {
+      line-height: 140%;
       opacity: 0;
       transform: scale(0.2);
       &.is-transitioned {

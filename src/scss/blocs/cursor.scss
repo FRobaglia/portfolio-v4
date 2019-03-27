@@ -8,7 +8,7 @@
   mix-blend-mode: difference;
   width: 28px;
   height: 28px;
-  transition:transform .3s;
+  transition: transform .3s ease-in-out;
 
   &.is-hovering {
     transform: scale(2);
