@@ -50,9 +50,13 @@
   }
   .home {
     max-width: 600px;
-    .title, .subtitle {
+    .title {
       transition: transform 1s ease-out, color 0.25s;
       transform: translateY(-100vw) scale(0);
+    }
+    .subtitle { 
+      transform: translateY(100vw) scale(0);
+      transition: transform 1s 0.5s;
     }
     .title.is-transitioned, .subtitle.is-transitioned {
       transform: initial;

@@ -1,0 +1,22 @@
+.socials {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
+
+  & .social {
+    transition: transform 0.5s;
+    width: 32px;
+    height: 32px;
+    fill: var(--black);
+
+    &:hover {
+      transform: scale(1.3) rotate(360deg);
+    }
+  }
+}
+
+.gmail {
+  color: var(--black);
+  margin-top: 20vh;
+}
