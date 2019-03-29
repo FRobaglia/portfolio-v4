@@ -2,7 +2,7 @@
   display: none;
   pointer-events: none;
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   border-radius: 100%;
   background: var(--green);
   opacity: 0.75;
@@ -11,8 +11,9 @@
   transition: transform .3s;
 
   &.is-hovering {
-    mix-blend-mode: color-burn;
-    background: var(--black);
+    opacity: 1;
+    mix-blend-mode: color-dodge;
+    background: var(--green);
     transform: scale(2);
   }
 
