@@ -1,16 +1,21 @@
 .cursor {
-  pointer-events:none;
-  position:absolute;
+  display: none;
+  pointer-events: none;
+  position: absolute;
   z-index: 2;
-  border-radius: 28px;
+  border-radius: 100%;
   background: var(--green);
   opacity: 0.75;
   mix-blend-mode: difference;
   width: 28px;
   height: 28px;
-  transition: transform .3s ease-in-out;
+  transition: transform .3s;
 
   &.is-hovering {
     transform: scale(2);
+  }
+
+  &.is-visible {
+    display: block;
   }
 }

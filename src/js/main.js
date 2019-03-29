@@ -180,6 +180,21 @@ document.addEventListener("mousemove", function(e) {
   cursor.DOM.style.top = -14 + e.clientY + cursor.lastPos + "px";
 });
 
+if (window.chrome) {
+  document.addEventListener('mouseleave', function() {
+    cursor.DOM.classList.remove('is-visible')
+  })
+  
+  document.addEventListener('mouseenter', function() {
+    cursor.DOM.classList.add('is-visible')
+  })
+} else {
+  setTimeout(() => {
+    cursor.DOM.classList.add('is-visible');
+  }, 1500);
+}
+
+
 window.addEventListener('scroll', function() {
   cursor.lastPos = window.scrollY;
   cursor.DOM.style.top = -14 + cursor.lastPos + cursor.pos + "px";

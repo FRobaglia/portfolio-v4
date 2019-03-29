@@ -26,10 +26,6 @@
       filter: initial;
       transform : initial;
     }
-
-    &.slow-transition {
-      transition: transform 1s;
-    }
   }
 
   .tags {
@@ -120,11 +116,13 @@
       }
       img {
         transition: transform 1s;
-        filter: blur(2px);
         box-shadow: initial;
         transform: translateY(-10vh);
         width: 70%;
-        object-fit: cover;
+
+        &:hover {
+          filter: inherit;
+        }
       }
     }
   }
