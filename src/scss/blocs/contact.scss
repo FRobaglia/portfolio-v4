@@ -8,7 +8,10 @@
     transition: transform 0.5s;
     width: 32px;
     height: 32px;
-    fill: var(--black);
+
+    & svg {
+      fill: var(--black);
+    }
 
     &:hover {
       transform: scale(1.3) rotate(360deg);
