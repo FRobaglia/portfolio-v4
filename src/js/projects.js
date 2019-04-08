@@ -35,3 +35,12 @@ for (let i = 0; i < hovers.length; i++) {
     cursor.DOM.classList.remove("is-hovering");
   });
 }
+
+
+let paragraphs = document.querySelectorAll('p');
+
+paragraphs.forEach(p => {
+  setTimeout(() => {
+    p.classList.add('is-visible');
+  }, 600);
+});
