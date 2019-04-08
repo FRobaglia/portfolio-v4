@@ -117,22 +117,45 @@ window.addEventListener("DOMContentLoaded", () => {
   setTimeout(animations, 1000);
 });
 
-/* darkmode */
+let siteMode = localStorage.getItem("mode");
 
-let darkMode = false;
+function enableNightMode() {
+  document.documentElement.style.setProperty("--black", "#eee");
+  document.documentElement.style.setProperty("--white", "#222");
+  document.documentElement.style.setProperty("--grey", "#ddd");
+}
 
-document.querySelector(".name").addEventListener("click", function() {
-  if (!darkMode) {
-    document.documentElement.style.setProperty("--black", "#eee");
-    document.documentElement.style.setProperty("--white", "#222");
-    document.documentElement.style.setProperty("--grey", "#ddd");
-  } else {
-    document.documentElement.style.setProperty("--black", "#222");
-    document.documentElement.style.setProperty("--white", "#eee");
-    document.documentElement.style.setProperty("--grey", "#555");
+function enableLightMode() {
+  document.documentElement.style.setProperty("--black", "#222");
+  document.documentElement.style.setProperty("--white", "#eee");
+  document.documentElement.style.setProperty("--grey", "#555");
+}
+
+
+if (localStorage.getItem("mode") === null) {
+  siteMode = "light";
+  enableLightMode();
+  localStorage.setItem("mode", siteMode)
+}
+
+if (localStorage.getItem("mode") === "night") {
+  enableNightMode();
+  siteMode = "night";
+}
+
+function switchMode() {
+  if (siteMode === "night" || !siteMode) {
+    enableNightMode();
+    localStorage.setItem("mode", siteMode);
+    siteMode = "light";
+  } else if (siteMode === "light") {
+    enableLightMode();
+    localStorage.setItem("mode", siteMode);
+    siteMode = "night";
   }
-  darkMode = !darkMode;
-});
+}
+
+document.querySelector(".name").addEventListener("click", switchMode);
 
 /* projects animation on click */
 

@@ -44,3 +44,43 @@ paragraphs.forEach(p => {
     p.classList.add('is-visible');
   }, 600);
 });
+
+/* darkmode */
+
+let siteMode = localStorage.getItem("mode");
+
+function enableNightMode() {
+  document.documentElement.style.setProperty("--black", "#eee");
+  document.documentElement.style.setProperty("--white", "#222");
+  document.documentElement.style.setProperty("--grey", "#ddd");
+}
+
+function enableLightMode() {
+  document.documentElement.style.setProperty("--black", "#222");
+  document.documentElement.style.setProperty("--white", "#eee");
+  document.documentElement.style.setProperty("--grey", "#555");
+}
+
+
+if (localStorage.getItem("mode") === null) {
+  siteMode = "light";
+  enableLightMode();
+  localStorage.setItem("mode", siteMode)
+}
+
+if (localStorage.getItem("mode") === "night") {
+  enableNightMode();
+  siteMode = "night";
+}
+
+function switchMode() {
+  if (siteMode === "night" || !siteMode) {
+    enableNightMode();
+    localStorage.setItem("mode", siteMode);
+    siteMode = "light";
+  } else if (siteMode === "light") {
+    enableLightMode();
+    localStorage.setItem("mode", siteMode);
+    siteMode = "night";
+  }
+}
